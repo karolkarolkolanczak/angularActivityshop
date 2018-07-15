@@ -9,6 +9,8 @@ import {ProductCategory} from '../productCategory.model';
 })
 export class ProductCategoriesListComponent implements OnInit {
 
+  @Output() productCategorySelected=new EventEmitter<ProductCategory>();
+
   productCategories: ProductCategory[]=[
     new ProductCategory('shoes','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
     new ProductCategory('jackets','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
@@ -23,5 +25,9 @@ export class ProductCategoriesListComponent implements OnInit {
 
   print(text:string){
     console.log("text: "+text);
+  }
+
+  selectedProductCategory(productCategory: ProductCategory){
+    this.productCategorySelected.emit(productCategory);
   }
 }

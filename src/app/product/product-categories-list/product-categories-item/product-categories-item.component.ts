@@ -10,6 +10,8 @@ export class ProductCategoriesItemComponent implements OnInit {
 
   @Input() productCategoriesInjected: ProductCategory[];
   @Output() out=new EventEmitter<string>();
+  @Output() selectedCategory=new EventEmitter<>();
+
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +20,11 @@ export class ProductCategoriesItemComponent implements OnInit {
   go(productCategoriesInjected){
     this.out.emit(productCategoriesInjected.name);
     console.log(productCategoriesInjected);
+  }
+
+  productCategorySelected(){
+    console.log("selected");
+    this.selectedCategory.emit();
   }
 
 }

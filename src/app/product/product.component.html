@@ -1,3 +1,12 @@
-<p>
-  product works!
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <app-product-categories-list (productCategorySelected)="selectedProductCategory=$event"></app-product-categories-list>
+  </div>
+  <div class="col-md-8">
+    <app-product-details *ngIf="selectedProductCategory; else infoMessage"
+    [productCategory]="selectedProductCategory"></app-product-details>
+    <ng-template #infoMessage>
+      <p>Please select Catgeory</p>
+    </ng-template>
+  </div>
+</div>
