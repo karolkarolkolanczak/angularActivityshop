@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
-import {ProductCategory} from '../../productCategory.model';
+import {ProductCategory} from '../productCategory.model';
+
 
 @Component({
   selector: 'app-product-categories-list',
@@ -8,22 +9,19 @@ import {ProductCategory} from '../../productCategory.model';
 })
 export class ProductCategoriesListComponent implements OnInit {
 
-// productCategories: ProductCategory[]=[
-//   new ProductCategory('shoes','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
-//   new ProductCategory('jackets','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
-//   new ProductCategory('socks','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
-//   new ProductCategory('t-shirts', 'http://www.personal.psu.edu/oeo5025/jpg.jpg'),
-// ];
-@Input() productCategoriesInjected: ProductCategory[];
-@Output() out=new EventEmitter<string>();
+  productCategories: ProductCategory[]=[
+    new ProductCategory('shoes','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
+    new ProductCategory('jackets','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
+    new ProductCategory('socks','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
+    new ProductCategory('t-shirts', 'http://www.personal.psu.edu/oeo5025/jpg.jpg'),
+  ];
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  go(productCategoriesInjected){
-    this.out.emit(productCategoriesInjected.name);
-    console.log(productCategoriesInjected);
+  print(text:string){
+    console.log("text: "+text);
   }
-
 }

@@ -8,10 +8,9 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
-import { ProductCategoriesComponent } from './product/product-categories/product-categories.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProductCategoriesListComponent } from './product/product-categories/product-categories-list/product-categories-list.component';
-import { ProductCategoriesItemComponent } from './product/product-categories/product-categories-list/product-categories-item/product-categories-item.component';
+import {ProductCategoriesListComponent} from './product/product-categories-list/product-categories-list.component';
+import {ProductCategoriesItemComponent} from './product/product-categories-list/product-categories-item/product-categories-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { ProductCategoriesItemComponent } from './product/product-categories/pro
     ProductListComponent,
     ProductDetailsComponent,
     ProductEditComponent,
-    ProductCategoriesComponent,
     FooterComponent,
     ProductCategoriesListComponent,
     ProductCategoriesItemComponent
