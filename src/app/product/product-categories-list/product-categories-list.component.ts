@@ -1,4 +1,4 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {ProductCategory} from '../../productCategory.model';
 
 @Component({
@@ -15,10 +15,15 @@ export class ProductCategoriesListComponent implements OnInit {
 //   new ProductCategory('t-shirts', 'http://www.personal.psu.edu/oeo5025/jpg.jpg'),
 // ];
 @Input() productCategoriesInjected: ProductCategory[];
-
+@Output() out=new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  go(productCategoriesInjected){
+    this.out.emit(productCategoriesInjected.name);
+    console.log(productCategoriesInjected);
   }
 
 }
