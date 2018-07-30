@@ -10,7 +10,7 @@ export class ProductCategoriesItemComponent implements OnInit {
 
   @Input() productCategoriesInjected: ProductCategory[];
   @Output() out=new EventEmitter<string>();
-  @Output() selectedCategory=new EventEmitter<>();
+  @Output() selectedCategory=new EventEmitter();
 
   constructor() { }
 
