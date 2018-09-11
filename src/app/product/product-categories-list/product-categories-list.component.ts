@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {ProductCategory} from '../productCategory.model';
+import {Product} from '../product.model';
 
 
 @Component({
@@ -9,7 +10,7 @@ import {ProductCategory} from '../productCategory.model';
 })
 export class ProductCategoriesListComponent implements OnInit {
 
-  @Output() productCategorySelected=new EventEmitter<ProductCategory>();
+  @Output() categorySelectedFromList=new EventEmitter<ProductCategory>();
 
   productCategories: ProductCategory[]=[
     new ProductCategory('shoes','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
@@ -23,11 +24,12 @@ export class ProductCategoriesListComponent implements OnInit {
   ngOnInit() {
   }
 
-  print(text:string){
-    console.log("text: "+text);
+  print(text:string) {
+    console.log('text: '+text);
   }
 
-  selectedProductCategory(productCategory: ProductCategory){
-    this.productCategorySelected.emit(productCategory);
+  selectedCategory(productCategory: ProductCategory){
+    console.log('product-categories-list.component: Product category selected: '+productCategory);
+    this.categorySelectedFromList.emit(productCategory);
   }
 }

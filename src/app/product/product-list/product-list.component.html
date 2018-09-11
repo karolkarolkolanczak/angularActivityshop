@@ -1,15 +1,18 @@
-<!--<div class="row">-->
-  <!--<div class="col-xs-12">-->
-    <!--<a href="#" class="list-group-item " *ngFor="let value of products">-->
-      <!--<div class="pull-left">-->
-        <!--<h4 class="list-group-item-heading">{{value.name}}</h4>-->
-        <!--<p class="list-group-item-action">{{value.description}}</p>-->
-      <!--</div>-->
-      <!--<span class="pull-right">-->
-        <!--<img [src]="value.image" alt={{value.name}} class="img-responsive" style="max-height: 50px;">-->
-      <!--</span>-->
-    <!--</a>-->
-  <!--</div>-->
-<!--</div>-->
-<!--<hr>-->
+Product category clicked: {{productCategory.name}}
+<div class="row">
+  <div class="col-xs-12" *ngIf="productCategory">
+    <!--<app-product-details *ngIf="selectedProductCategory2; else infoMessage"-->
+    <!--[productCategory]="selectedProductCategory"></app-product-details>-->
+    <!--<ng-template #infoMessage>-->
+    <!--<p>Please select Catgeory</p>-->
+    <!--&lt;!&ndash;</ng-template>&ndash;&gt;-->
+
+
+    <a href="#" class="list-group-item ">
+      <app-product-item  *ngFor="let value of searchListOfProductsByCategory(productCategory)" [product]="value">
+      </app-product-item>
+    </a>
+  </div>
+</div>
+<hr>
 

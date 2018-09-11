@@ -2,9 +2,9 @@
 
 <div class="row">
   <div class="col-md-12">
-    <app-product-categories-item *ngFor="let value of productCategories"
-                                 [productCategoriesInjected]="value"
-                                 (selectedCategory)="selectedProductCategory(value)">
+<app-product-categories-item *ngFor="let value of productCategories"
+       [productCategoriesInjected]="value"
+       (selectedCategoryItem)="selectedCategory(value)">
     </app-product-categories-item>
   </div>
   <p (out)="print($event)" ></p>

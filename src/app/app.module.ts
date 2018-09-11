@@ -11,6 +11,7 @@ import { ProductEditComponent } from './product/product-edit/product-edit.compon
 import { FooterComponent } from './footer/footer.component';
 import {ProductCategoriesListComponent} from './product/product-categories-list/product-categories-list.component';
 import {ProductCategoriesItemComponent} from './product/product-categories-list/product-categories-item/product-categories-item.component';
+import { ProductItemComponent } from './product/product-list/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {ProductCategoriesItemComponent} from './product/product-categories-list/
     ProductEditComponent,
     FooterComponent,
     ProductCategoriesListComponent,
-    ProductCategoriesItemComponent
+    ProductCategoriesItemComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,

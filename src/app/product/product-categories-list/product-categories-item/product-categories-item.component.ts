@@ -10,7 +10,7 @@ export class ProductCategoriesItemComponent implements OnInit {
 
   @Input() productCategoriesInjected: ProductCategory[];
   @Output() out=new EventEmitter<string>();
-  @Output() selectedCategory=new EventEmitter();
+  @Output() selectedCategoryItem=new EventEmitter();
 
   constructor() { }
 
@@ -23,8 +23,8 @@ export class ProductCategoriesItemComponent implements OnInit {
   }
 
   productCategorySelected(){
-    console.log("selected");
-    this.selectedCategory.emit();
+    console.log('product-categories-item.component: selected');
+    this.selectedCategoryItem.emit();
   }
 
 }

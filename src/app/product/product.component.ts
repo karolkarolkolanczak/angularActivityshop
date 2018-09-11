@@ -14,6 +14,10 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  categorySelectedMain(value) {
+    console.log('categorySelectedMain: ' +value);
+    this.selectedProductCategory=value;
+    console.log("selected name: form product componnent: "+this.selectedProductCategory.name);
+  }
 
 }

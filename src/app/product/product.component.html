@@ -1,12 +1,13 @@
 <div class="row">
   <div class="col-md-2">
-    <app-product-categories-list (productCategorySelected)="selectedProductCategory=$event"></app-product-categories-list>
+    <app-product-categories-list (categorySelectedFromList)="categorySelectedMain($event)"></app-product-categories-list>
   </div>
   <div class="col-md-8">
-    <app-product-details *ngIf="selectedProductCategory; else infoMessage"
-    [productCategory]="selectedProductCategory"></app-product-details>
-    <ng-template #infoMessage>
-      <p>Please select Catgeory</p>
-    </ng-template>
+    <!--<app-product-details *ngIf="selectedProductCategory2; else infoMessage"-->
+    <!--[productCategory]="selectedProductCategory"></app-product-details>-->
+    <!--<ng-template #infoMessage>-->
+      <!--<p>Please select Catgeory</p>-->
+    <!--</ng-template>-->
+    <app-product-list *ngIf="selectedProductCategory" [productCategory]="selectedProductCategory"></app-product-list>
   </div>
 </div>

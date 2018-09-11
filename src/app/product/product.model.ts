@@ -5,9 +5,9 @@ export class  Product {
   description: string;
   price: number;
   image: string;
-  productCategory: ProductCategory;
+  productCategory: string;
 
-  constructor(name: string, description: string, price: number, image: string, productCategory: ProductCategory) {
+  constructor(name: string, description: string, price: number, image: string, productCategory: string) {
     this.name = name;
     this.description = description;
     this.price = price;
