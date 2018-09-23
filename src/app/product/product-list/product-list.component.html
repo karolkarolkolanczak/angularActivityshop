@@ -1,6 +1,5 @@
 Product category clicked: {{productCategory.name}}
-<div class="row">
-  <div class="col-xs-12" *ngIf="productCategory">
+  <div  class="col-md-12" *ngIf="productCategory">
     <!--<app-product-details *ngIf="selectedProductCategory2; else infoMessage"-->
     <!--[productCategory]="selectedProductCategory"></app-product-details>-->
     <!--<ng-template #infoMessage>-->
@@ -8,11 +7,9 @@ Product category clicked: {{productCategory.name}}
     <!--&lt;!&ndash;</ng-template>&ndash;&gt;-->
 
 
-    <a href="#" class="list-group-item ">
-      <app-product-item  *ngFor="let value of searchListOfProductsByCategory(productCategory)" [product]="value">
-      </app-product-item>
-    </a>
-  </div>
-</div>
-<hr>
+      <ul class="list-group ">
+        <app-product-item  *ngFor="let value of searchListOfProductsByCategory(productCategory)" [product]="value">
+        </app-product-item>
+      </ul>
+
 

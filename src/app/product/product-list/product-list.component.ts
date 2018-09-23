@@ -14,6 +14,10 @@ export class ProductListComponent implements OnInit {
   productList: Product[]=[
     new Product('shoe 1','description shoe 1',1.00,'','shoes'),
     new Product('shoe 2','description shoe 2',2.00,'','shoes'),
+    new Product('shoe 3','description shoe 3',3.00,'','shoes'),
+    new Product('shoe 4','description shoe 4',4.00,'','shoes'),
+    new Product('shoe 5','description shoe 5',5.00,'','shoes'),
+    new Product('shoe 6','description shoe 6',6.00,'','shoes'),
     new Product('jacket 1','description jacket 1',3.00,'','jackets'),
     new Product('jacket 2','description jacket 2',4.00,'','jackets'),
     new Product('socks 1','description socks 1',5.00,'','socks'),
