@@ -24,12 +24,8 @@ export class ProductCategoriesListComponent implements OnInit {
   ngOnInit() {
   }
 
-  print(text:string) {
-    console.log('text: '+text);
-  }
 
   selectedCategory(productCategory: ProductCategory){
-    console.log('product-categories-list.component: Product category selected: '+productCategory);
     this.categorySelectedFromList.emit(productCategory);
   }
 }

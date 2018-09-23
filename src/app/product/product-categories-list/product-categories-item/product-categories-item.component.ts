@@ -19,11 +19,9 @@ export class ProductCategoriesItemComponent implements OnInit {
 
   go(productCategoriesInjected){
     this.out.emit(productCategoriesInjected.name);
-    console.log(productCategoriesInjected);
   }
 
   productCategorySelected(){
-    console.log('product-categories-item.component: selected');
     this.selectedCategoryItem.emit();
   }
 

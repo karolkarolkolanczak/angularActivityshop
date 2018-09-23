@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {Product} from '../product.model';
 import { ProductCategory } from '../productCategory.model';
 
@@ -10,6 +10,7 @@ import { ProductCategory } from '../productCategory.model';
 export class ProductListComponent implements OnInit {
 
   @Input() productCategory:ProductCategory;
+  @Output() productSelectedFromList=new EventEmitter<Product>();
 
   productList: Product[]=[
     new Product('shoe 1','description shoe 1',1.00,'','shoes'),
@@ -44,5 +45,7 @@ export class ProductListComponent implements OnInit {
     }
     return  filteredListOfProducts;
   }
-
+  selectedProduct(product: Product){
+    this.productSelectedFromList.emit(product);
+  }
 }
