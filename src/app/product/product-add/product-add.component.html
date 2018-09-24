@@ -3,64 +3,64 @@
 <form class="form-horizontal">
 
   <div class="form-group">
-    <label class="col-sm-2 control-label" >Product name:</label>
+    <label class="col-sm-2 control-label" >Name:</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" #productName/>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label" >Description:</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" #productDescription/>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label" >Price:</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" #productPrice/>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label" >Product Category:</label>
+    <label class="col-sm-2 control-label" >Category:</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" #productCategory/>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label" >Product color:</label>
+    <label class="col-sm-2 control-label" >Color:</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" #productColor/>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label" >Product material:</label>
+    <label class="col-sm-2 control-label" >Material:</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" #productMaterial/>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label" >Product weight:</label>
+    <label class="col-sm-2 control-label" >Weight:</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" #productWeight/>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label" >Gender:</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" #productGender/>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label" >Image:</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" #productImage/>
     </div>
   </div>
 
   <div class="form-group">
     <label class="col-sm-2 control-label" ></label>
     <div class="col-sm-1 control-label" style="margin-bottom: 100px">
-      <button type="submit" class="btn btn-primary" >Submit</button>
+      <button type="button" class="btn btn-primary" (click)="saveNewProduct()">Submit</button>
     </div>
   </div>
 

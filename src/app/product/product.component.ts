@@ -23,7 +23,5 @@ export class ProductComponent implements OnInit {
   productSelectedMain(value) {
     this.selectedProduct=value;
   }
-  addNewProduct(){
-    // this.router.navigate(["product.add"]);
-  }
+
 }
