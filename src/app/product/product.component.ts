@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductCategory} from './productCategory.model';
 import { Product } from './product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -22,5 +23,7 @@ export class ProductComponent implements OnInit {
   productSelectedMain(value) {
     this.selectedProduct=value;
   }
-
+  addNewProduct(){
+    // this.router.navigate(["product.add"]);
+  }
 }
