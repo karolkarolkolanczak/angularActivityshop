@@ -20,7 +20,7 @@ export class  Product {
     this.color=color;
     this.material=material;
     this.weight=weight;
-    this.gender=this.gender;
+    this.gender=gender;
     this.image = image;
   }
 }

@@ -26,9 +26,4 @@ export class ProductListComponent {
     this.productSelectedFromList.emit(product);
   }
 
-  // newPrductAdded(product: Product){
-  //   // this.productService.addProdcut(product)
-  //   // this.productList.push(product);
-  //   console.log("product added: "+product.name);
-  // }
 }

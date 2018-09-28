@@ -16,6 +16,7 @@ import { ProductAddComponent } from './product/product-add/product-add.component
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ProductsService } from './product/products.service';
 import { ProductCategoryService } from './product/product-category.service';
+import { GenderService } from './product/gender.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { ProductCategoryService } from './product/product-category.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [ProductsService, ProductCategoryService],
-  bootstrap: [AppComponent]
+  providers: [ProductsService, ProductCategoryService,GenderService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

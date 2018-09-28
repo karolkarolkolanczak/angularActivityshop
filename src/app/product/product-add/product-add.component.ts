@@ -3,6 +3,7 @@ import { Product } from '../product.model';
 import { ProductsService } from '../products.service';
 import { ProductCategoryService } from '../product-category.service';
 import { ProductCategory } from '../productCategory.model';
+import { GenderService } from '../gender.service';
 
 @Component({
   selector: 'app-product-add',
@@ -21,11 +22,13 @@ export class ProductAddComponent implements OnInit {
   @ViewChild('productGender') productGender:ElementRef;
   @ViewChild('productImage') productImage:ElementRef;
   productCategoriesList: ProductCategory[];
+  genderList: string[];
 
-  constructor(private productService:ProductsService, private productCategoriesService: ProductCategoryService) { }
+  constructor(private productService:ProductsService, private productCategoriesService: ProductCategoryService, private genderService:GenderService) { }
 
   ngOnInit() {
     this.productCategoriesList=this.productCategoriesService.productCategoriesList;
+    this.genderList=this.genderService.genderList;
   }
 
   saveNewProduct(){

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from './product/products.service';
 import { ProductCategoryService } from './product/product-category.service';
 import { ProductCategory } from './product/productCategory.model';
+import { Product } from './product/product.model';
+import { GenderService } from './product/gender.service';
 
 @Component({
   selector: 'app-root',
@@ -12,14 +14,16 @@ import { ProductCategory } from './product/productCategory.model';
 export class AppComponent implements OnInit{
   title = 'app';
 
-  productList: any=[];
+  productList: Product[]=[];
   productCategoriesList: ProductCategory[];
+  genderList: string[];
 
-  constructor(private productService:ProductsService, private productCategoryService :ProductCategoryService) {
+  constructor(private productService:ProductsService, private productCategoryService :ProductCategoryService, private genderService:GenderService) {
   }
 
   ngOnInit(): void {
     this.productList=this.productService.productList;
     this.productCategoriesList=this.productCategoryService.productCategoriesList;
+    this.genderList=this.genderService.genderList;
   }
 }

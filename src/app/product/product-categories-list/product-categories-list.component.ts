@@ -12,20 +12,13 @@ import { ProductCategoryService } from '../product-category.service';
 export class ProductCategoriesListComponent implements OnInit {
 
   @Output() categorySelectedFromList=new EventEmitter<ProductCategory>();
-  productCategoriesList: ProductCategory[]
-  // productCategories: ProductCategory[]=[
-  //   new ProductCategory('shoes','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
-  //   new ProductCategory('jackets','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
-  //   new ProductCategory('socks','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
-  //   new ProductCategory('t-shirts', 'http://www.personal.psu.edu/oeo5025/jpg.jpg'),
-  // ];
+  productCategoriesList: ProductCategory[];
 
   constructor(private productCategoryService :ProductCategoryService) { }
 
   ngOnInit() {
     this.productCategoriesList=this.productCategoryService.productCategoriesList;
   }
-
 
   selectedCategory(productCategory: ProductCategory){
     this.categorySelectedFromList.emit(productCategory);

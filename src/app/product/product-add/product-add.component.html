@@ -49,7 +49,9 @@
   <div class="form-group">
     <label class="col-sm-2 control-label" >Gender:</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" #productGender/>
+      <select class="form-control" #productGender >
+        <option *ngFor="let value of genderList" [ngValue]="value" >{{value}}</option>
+      </select>
     </div>
   </div>
   <div class="form-group">
