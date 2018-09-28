@@ -15,6 +15,7 @@ import { ProductItemComponent } from './product/product-list/product-item/produc
 import { ProductAddComponent } from './product/product-add/product-add.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ProductsService } from './product/products.service';
+import { ProductCategoryService } from './product/product-category.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { ProductsService } from './product/products.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [ProductsService],
+  providers: [ProductsService, ProductCategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
