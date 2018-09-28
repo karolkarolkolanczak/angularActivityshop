@@ -1,6 +1,8 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductsService } from '../products.service';
+import { ProductCategoryService } from '../product-category.service';
+import { ProductCategory } from '../productCategory.model';
 
 @Component({
   selector: 'app-product-add',
@@ -18,11 +20,14 @@ export class ProductAddComponent implements OnInit {
   @ViewChild('productWeight') productWeight:ElementRef;
   @ViewChild('productGender') productGender:ElementRef;
   @ViewChild('productImage') productImage:ElementRef;
+  productCategoriesList: ProductCategory[];
 
-  constructor(private productService:ProductsService) { }
+  constructor(private productService:ProductsService, private productCategoriesService: ProductCategoryService) { }
 
   ngOnInit() {
+    this.productCategoriesList=this.productCategoriesService.productCategoriesList;
   }
+
   saveNewProduct(){
     const name=this.productName.nativeElement.value;
     const description=this.productDescription.nativeElement.value;

@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   title = 'app';
 
   productList: any=[];
-  productCategoriesList: ProductCategory[]
+  productCategoriesList: ProductCategory[];
 
   constructor(private productService:ProductsService, private productCategoryService :ProductCategoryService) {
   }
