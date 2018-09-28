@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product.model';
+import { ProductCategory } from './productCategory.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,16 @@ export class ProductsService {
   addProdcut(product: Product){
     this.productList.push(product);
     console.log("product added(service): "+product.name+ " " +product.category);
+  }
+  searchProductListByCategory(productCategory: ProductCategory): Product[]{
+    let filteredListOfProducts: Product[]=[];
+
+    for(let value of this.productList){
+      if(value.category == productCategory.name){
+        filteredListOfProducts.push(value);
+      }
+    }
+    return  filteredListOfProducts;
   }
 }
 
