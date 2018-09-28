@@ -13,6 +13,8 @@ import {ProductCategoriesListComponent} from './product/product-categories-list/
 import {ProductCategoriesItemComponent} from './product/product-categories-list/product-categories-item/product-categories-item.component';
 import { ProductItemComponent } from './product/product-list/product-item/product-item.component';
 import { ProductAddComponent } from './product/product-add/product-add.component';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { ProductsService } from './product/products.service';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,14 @@ import { ProductAddComponent } from './product/product-add/product-add.component
     ProductCategoriesListComponent,
     ProductCategoriesItemComponent,
     ProductItemComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

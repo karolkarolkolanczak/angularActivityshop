@@ -1,10 +1,12 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Product } from '../product.model';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-product-add',
   templateUrl: './product-add.component.html',
-  styleUrls: ['./product-add.component.css']
+  styleUrls: ['./product-add.component.css'],
+  providers:[ProductsService]
 })
 export class ProductAddComponent implements OnInit {
 
@@ -17,8 +19,8 @@ export class ProductAddComponent implements OnInit {
   @ViewChild('productWeight') productWeight:ElementRef;
   @ViewChild('productGender') productGender:ElementRef;
   @ViewChild('productImage') productImage:ElementRef;
-  @Output() product=new EventEmitter<Product>();
-  constructor() { }
+
+  constructor(private productService:ProductsService) { }
 
   ngOnInit() {
   }
@@ -33,6 +35,7 @@ export class ProductAddComponent implements OnInit {
     const gender=this.productGender.nativeElement.value;
     const image=this.productImage.nativeElement.value;
     const newProduct=new Product(name,description,price,category,color,material,weight,gender,image);
-    this.product.emit(newProduct);
+    this.productService.addProdcut(newProduct);
+
   }
 }
