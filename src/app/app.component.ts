@@ -22,8 +22,8 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.productList=this.productService.productList;
-    this.productCategoriesList=this.productCategoryService.productCategoriesList;
-    this.genderList=this.genderService.genderList;
+    this.productList=this.productService.getProductList();
+    this.productCategoriesList=this.productCategoryService.getProductCategoriesList();
+    this.genderList=this.genderService.getGenderList();
   }
 }

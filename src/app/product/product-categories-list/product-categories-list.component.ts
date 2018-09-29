@@ -17,7 +17,7 @@ export class ProductCategoriesListComponent implements OnInit {
   constructor(private productCategoryService :ProductCategoryService) { }
 
   ngOnInit() {
-    this.productCategoriesList=this.productCategoryService.productCategoriesList;
+    this.productCategoriesList=this.productCategoryService.getProductCategoriesList();
   }
 
   selectedCategory(productCategory: ProductCategory){

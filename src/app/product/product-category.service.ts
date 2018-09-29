@@ -6,7 +6,7 @@ import { ProductCategory } from './productCategory.model';
 })
 export class ProductCategoryService {
 
-  productCategoriesList: ProductCategory[]=[
+  private productCategoriesList: ProductCategory[]=[
     new ProductCategory('shoes','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
     new ProductCategory('jackets','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
     new ProductCategory('socks','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
@@ -15,7 +15,9 @@ export class ProductCategoryService {
 
   constructor() { }
 
-
+  getProductCategoriesList():ProductCategory[]{
+    return this.productCategoriesList.slice();
+  }
 
 
 }

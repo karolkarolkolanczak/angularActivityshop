@@ -27,8 +27,8 @@ export class ProductAddComponent implements OnInit {
   constructor(private productService:ProductsService, private productCategoriesService: ProductCategoryService, private genderService:GenderService) { }
 
   ngOnInit() {
-    this.productCategoriesList=this.productCategoriesService.productCategoriesList;
-    this.genderList=this.genderService.genderList;
+    this.productCategoriesList=this.productCategoriesService.getProductCategoriesList();
+    this.genderList=this.genderService.getGenderList();
   }
 
   saveNewProduct(){

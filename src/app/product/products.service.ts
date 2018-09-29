@@ -6,7 +6,7 @@ import { ProductCategory } from './productCategory.model';
   providedIn: 'root'
 })
 export class ProductsService {
-  productList: Product[]=[
+  private productList: Product[]=[
     new Product('shoe 1','description shoe 1',1.00,'shoes','shoes','cotton','123','male','image 1'),
     new Product('shoe 2','description shoe 2',2.00,'shoes','shoes','cotton','123','male','image 1'),
     new Product('shoe 3','description shoe 3',3.00,'shoes','shoes','cotton','123','male','image 1'),
@@ -21,6 +21,10 @@ export class ProductsService {
     new Product('t-shirt 2','description t-shirt 2',8.00,'t-shirts','t-shirts','cotton','123','male','image 1')
   ];
   constructor() { }
+
+  getProductList(): Product[]{
+    return this.productList.slice();
+  }
 
   addProdcut(product: Product){
     this.productList.push(product);

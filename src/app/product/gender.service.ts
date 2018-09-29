@@ -5,9 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class GenderService {
 
-  genderList: string[]=[
+  private genderList: string[]=[
     'male',
     'female'
   ];
   constructor() { }
+
+  getGenderList():string[]{
+    return this.genderList.slice();
+  }
 }
