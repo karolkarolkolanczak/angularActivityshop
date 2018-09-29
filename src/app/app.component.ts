@@ -18,7 +18,7 @@ export class AppComponent implements OnInit{
   productCategoriesList: ProductCategory[];
   genderList: string[];
 
-  constructor(private productService:ProductsService, private productCategoryService :ProductCategoryService, private genderService:GenderService) {
+  constructor(private productService:ProductsService, private productCategoryService:ProductCategoryService, private genderService:GenderService) {
   }
 
   ngOnInit(): void {

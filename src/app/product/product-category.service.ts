@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { ProductCategory } from './productCategory.model';
 
 @Injectable({
@@ -15,9 +15,13 @@ export class ProductCategoryService {
 
   constructor() { }
 
+  // cross Component Comunication
+
+
   getProductCategoriesList():ProductCategory[]{
     return this.productCategoriesList.slice();
   }
 
+  categorySelected=new EventEmitter<ProductCategory>();
 
 }

@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ProductCategory} from '../../productCategory.model';
+import { ProductCategoryService } from '../../product-category.service';
 
 @Component({
   selector: 'app-product-categories-item',
@@ -8,21 +9,19 @@ import {ProductCategory} from '../../productCategory.model';
 })
 export class ProductCategoriesItemComponent implements OnInit {
 
-  @Input() productCategoriesInjected: ProductCategory[];
-  @Output() out=new EventEmitter<string>();
+  @Input() productCategory: ProductCategory[];
   @Output() selectedCategoryItem=new EventEmitter();
 
-  constructor() { }
+  constructor(private productCategoryService: ProductCategoryService) { }
 
   ngOnInit() {
   }
 
-  go(productCategoriesInjected){
-    this.out.emit(productCategoriesInjected.name);
-  }
-
+  // productCategorySelected(){
+  //   this.selectedCategoryItem.emit();
+  // }
   productCategorySelected(){
-    this.selectedCategoryItem.emit();
+    this.productCategoryService.categorySelected.emit(this.productCategory);
   }
 
 }

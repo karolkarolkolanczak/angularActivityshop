@@ -11,7 +11,6 @@ import { ProductCategoryService } from '../product-category.service';
 })
 export class ProductCategoriesListComponent implements OnInit {
 
-  @Output() categorySelectedFromList=new EventEmitter<ProductCategory>();
   productCategoriesList: ProductCategory[];
 
   constructor(private productCategoryService :ProductCategoryService) { }
@@ -20,7 +19,4 @@ export class ProductCategoriesListComponent implements OnInit {
     this.productCategoriesList=this.productCategoryService.getProductCategoriesList();
   }
 
-  selectedCategory(productCategory: ProductCategory){
-    this.categorySelectedFromList.emit(productCategory);
-  }
 }

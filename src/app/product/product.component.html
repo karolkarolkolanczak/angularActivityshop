@@ -12,8 +12,7 @@
     <!--<ng-template #infoMessage>-->
       <!--<p>Please select Catgeory</p>-->
     <!--</ng-template>-->
-    <app-product-list *ngIf="selectedProductCategory" [productCategory]="selectedProductCategory"
-    (productSelectedFromList)="productSelectedMain($event)"></app-product-list>
+    <app-product-list *ngIf="selectedProductCategory" [productCategory]="selectedProductCategory"></app-product-list>
     <app-product-details *ngIf="selectedProduct" [product]="selectedProduct"></app-product-details>
 
   </div>
