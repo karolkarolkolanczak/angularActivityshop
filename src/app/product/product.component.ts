@@ -3,6 +3,7 @@ import {ProductCategory} from './productCategory.model';
 import { Product } from './product.model';
 import { Router } from '@angular/router';
 import { ProductCategoryService } from './product-category.service';
+import { ProductsService } from './products.service';
 
 @Component({
   selector: 'app-product',
@@ -14,7 +15,7 @@ export class ProductComponent implements OnInit {
   selectedProductCategory:ProductCategory;
   selectedProduct: Product;
 
-  constructor(private productCategoryService: ProductCategoryService) { }
+  constructor(private productCategoryService: ProductCategoryService, private productService: ProductsService) { }
 
   ngOnInit() {
     this.productCategoryService.categorySelected
@@ -23,10 +24,12 @@ export class ProductComponent implements OnInit {
           this.selectedProductCategory=productCategory;
         }
       );
+    this.productService.productSelected
+      .subscribe((product: Product)=>{
+        this.selectedProduct=product;
+      });
   }
 
-  productSelectedMain(value) {
-    this.selectedProduct=value;
-  }
+
 
 }

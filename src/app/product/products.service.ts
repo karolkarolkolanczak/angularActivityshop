@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Product } from './product.model';
 import { ProductCategory } from './productCategory.model';
 
@@ -6,6 +6,10 @@ import { ProductCategory } from './productCategory.model';
   providedIn: 'root'
 })
 export class ProductsService {
+
+  // cross Component Comunication
+  productSelected=new EventEmitter<Product>();
+
   private productList: Product[]=[
     new Product('shoe 1','description shoe 1',1.00,'shoes','shoes','cotton','123','male','image 1'),
     new Product('shoe 2','description shoe 2',2.00,'shoes','shoes','cotton','123','male','image 1'),

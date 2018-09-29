@@ -9,17 +9,13 @@ import { ProductCategoryService } from '../../product-category.service';
 })
 export class ProductCategoriesItemComponent implements OnInit {
 
-  @Input() productCategory: ProductCategory[];
-  @Output() selectedCategoryItem=new EventEmitter();
+  @Input() productCategory: ProductCategory;
 
   constructor(private productCategoryService: ProductCategoryService) { }
 
   ngOnInit() {
   }
 
-  // productCategorySelected(){
-  //   this.selectedCategoryItem.emit();
-  // }
   productCategorySelected(){
     this.productCategoryService.categorySelected.emit(this.productCategory);
   }

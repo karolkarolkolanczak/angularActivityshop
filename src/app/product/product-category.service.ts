@@ -6,6 +6,9 @@ import { ProductCategory } from './productCategory.model';
 })
 export class ProductCategoryService {
 
+  // cross Component Comunication
+  categorySelected=new EventEmitter<ProductCategory>();
+
   private productCategoriesList: ProductCategory[]=[
     new ProductCategory('shoes','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
     new ProductCategory('jackets','http://www.personal.psu.edu/oeo5025/jpg.jpg' ),
@@ -15,13 +18,8 @@ export class ProductCategoryService {
 
   constructor() { }
 
-  // cross Component Comunication
-
-
   getProductCategoriesList():ProductCategory[]{
     return this.productCategoriesList.slice();
   }
-
-  categorySelected=new EventEmitter<ProductCategory>();
 
 }

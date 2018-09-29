@@ -13,17 +13,12 @@ import { ProductsService } from '../products.service';
 export class ProductListComponent {
 
   @Input() productCategory:ProductCategory;
-  @Output() productSelectedFromList=new EventEmitter<Product>();
 
   constructor(private productService:ProductsService) {
   }
 
   searchListOfProductsByCategory(productCategory: ProductCategory): Product[]{
     return this.productService.searchProductListByCategory(productCategory);
-  }
-
-  selectedProduct(product: Product){
-    this.productSelectedFromList.emit(product);
   }
 
 }
