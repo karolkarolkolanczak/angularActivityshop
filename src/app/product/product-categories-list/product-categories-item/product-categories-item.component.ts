@@ -11,7 +11,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class ProductCategoriesItemComponent implements OnInit {
 
   @Input() productCategory: ProductCategory;
-  id: number;
 
   constructor(private productCategoryService: ProductCategoryService,private route: ActivatedRoute,private router: Router) { }
 
@@ -19,9 +18,9 @@ export class ProductCategoriesItemComponent implements OnInit {
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.id = +params['id'];
-          console.log("FROM ProductCategoriesItemComponent:  "+this.id);
-          this.productCategory = this.productCategoryService.getProductCategoryById(this.id);
+          let numberId = +params['id'];
+          console.log("FROM ProductCategoriesItemComponent:  "+numberId);
+          this.productCategory = this.productCategoryService.getProductCategoryById(numberId);
         }
       );
   }

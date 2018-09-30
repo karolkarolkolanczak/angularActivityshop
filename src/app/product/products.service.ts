@@ -86,6 +86,16 @@ export class ProductsService {
     }
     return  filteredListOfProducts;
   }
+
+  getProductById(id: number){
+    const product: Product = this.productList.find(
+      (s) => {
+        return s.productId === id;
+      }
+    );
+    console.log("FROM PRODUCT SERVICE: "+product.productId+" "+product.name);
+    return product;
+  }
 }
 
 

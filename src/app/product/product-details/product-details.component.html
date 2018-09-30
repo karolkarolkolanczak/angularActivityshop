@@ -9,7 +9,7 @@
       <th>Price</th>
     </tr>
     <tr>
-      <td></td>
+      <td>{{product.productId}}</td>
       <td>{{product.name}}</td>
       <td>{{product.description}}</td>
       <td>{{product.price}}</td>
@@ -18,16 +18,16 @@
   <h1>&nbsp;</h1><h1>&nbsp;</h1>
   <table class="table table-striped">
     <tr>
-      <th>product.features.color</th>
-      <th>product.features.material</th>
-      <th>product.features.weight</th>
-      <th>product.features.gender</th>
+      <th>Product color</th>
+      <th>Product material</th>
+      <th>Product weight</th>
+      <th>Product gender</th>
     </tr>
     <tr>
-      <td>product.features.color</td>
-      <td>product.features.material</td>
-      <td>product.features.weight</td>
-      <td>product.features.gender</td>
+      <td>{{product.color}}</td>
+      <td>{{product.material}}</td>
+      <td>{{product.weight}}</td>
+      <td>{{product.gender}}</td>
     </tr>
   </table>
   <h1>&nbsp;</h1><h1>&nbsp;</h1>
@@ -48,7 +48,7 @@
       <th style="text-align:center">Image</th>
     </tr>
     <tr>
-      <td><img src="../static/images/burst.shopify.com/shoe1.jpg" width="500" height="500" class="center-block"/>
+      <td><img src = "{{product.image}}" width="400" height="400" class="center-block"/>
         <h5 style="text-align:center">Free pictures from: burst.shopify.com</h5>
       </td>
     </tr>

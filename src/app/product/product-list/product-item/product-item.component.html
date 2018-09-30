@@ -1,7 +1,7 @@
 
     <li class="list-group-item col-md-4">
       <div>
-        <a href="#" (click)="productSelected()">
+        <a  style="cursor: pointer" [routerLink]="['/productCategory',productCategory.productCategoryId,'product',product.productId]" >
           <div class="col-md-12" style="color: black">
             <div >{{product.name }}</div><br />
             <div>
