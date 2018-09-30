@@ -12,6 +12,6 @@ export class GenderService {
   constructor() { }
 
   getGenderList():string[]{
-    return this.genderList.slice();
+    return this.genderList;
   }
 }

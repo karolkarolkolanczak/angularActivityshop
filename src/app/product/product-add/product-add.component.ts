@@ -32,6 +32,7 @@ export class ProductAddComponent implements OnInit {
   }
 
   saveNewProduct(){
+    const productId=this.productName.nativeElement.value;//trzeba zmienic
     const name=this.productName.nativeElement.value;
     const description=this.productDescription.nativeElement.value;
     const price=this.productPrice.nativeElement.value;
@@ -41,7 +42,7 @@ export class ProductAddComponent implements OnInit {
     const weight=this.productWeight.nativeElement.value;
     const gender=this.productGender.nativeElement.value;
     const image=this.productImage.nativeElement.value;
-    const newProduct=new Product(name,description,price,category,color,material,weight,gender,image);
+    const newProduct=new Product(productId,name,description,price,category,color,material,weight,gender,image);
     this.productService.addProdcut(newProduct);
 
   }

@@ -1,15 +1,17 @@
-Product category clicked: {{productCategory.name}}
-  <div  class="col-md-12" *ngIf="productCategory">
+<H3> {{selectedProductCategory.name}}</H3>
+
+  <div  class="col-md-12" *ngIf="selectedProductCategory">
     <!--<app-product-details *ngIf="selectedProductCategory2; else infoMessage"-->
     <!--[productCategory]="selectedProductCategory"></app-product-details>-->
     <!--<ng-template #infoMessage>-->
     <!--<p>Please select Catgeory</p>-->
     <!--&lt;!&ndash;</ng-template>&ndash;&gt;-->
 
-
       <ul class="list-group ">
-        <app-product-item  *ngFor="let value of searchListOfProductsByCategory(productCategory)" [product]="value">
+        <app-product-item  *ngFor="let value of searchListOfProductsByCategory(selectedProductCategory)" [product]="value">
         </app-product-item>
       </ul>
 
-    <app-product-add (product)="newPrductAdded($event)"></app-product-add>
+    <!--<app-product-add (product)="newPrductAdded($event)"></app-product-add>-->
+
+  </div>

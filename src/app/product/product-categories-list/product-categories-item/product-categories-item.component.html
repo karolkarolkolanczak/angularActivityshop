@@ -1,17 +1,14 @@
-<div class="row">
-  <div class="col-xs-12">
-    <a href="#" (click)="productCategorySelected()" class="list-group-item clearfix">
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ productCategory.name }}</h4>
-        <p class="list-group-item-text">{{ productCategory.name }}</p>
+
+  <li class="list-group-item col-md-4">
+  <div >
+    <a  style="cursor: pointer" [routerLink]="['/productCategory',productCategory.productCategoryId]">
+      <div class="col-md-12" style="color: black">
+        <div>  {{productCategory.productCategoryId }} {{productCategory.name }}</div><br />
+        <div>
+          <img src = "{{productCategory.image}}" width="200" height="200" class="center-block"/>
+        </div>
       </div>
-      <span class="pull-right">
-        <img
-          [src]="productCategory.image"
-          alt="{{ productCategory.name }}"
-          class="img-responsive"
-          style="max-height: 50px;">
-      </span>
     </a>
   </div>
-</div>
+</li>
+
