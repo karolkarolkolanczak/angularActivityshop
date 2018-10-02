@@ -4,6 +4,7 @@ import { ProductsService } from '../products.service';
 import { ProductCategoryService } from '../product-category.service';
 import { ProductCategory } from '../productCategory.model';
 import { GenderService } from '../gender.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-add',
@@ -11,7 +12,7 @@ import { GenderService } from '../gender.service';
   styleUrls: ['./product-add.component.css']
 })
 export class ProductAddComponent implements OnInit {
-
+  @ViewChild('productId') productId:ElementRef;
   @ViewChild('productName') productName:ElementRef;
   @ViewChild('productDescription') productDescription:ElementRef;
   @ViewChild('productPrice') productPrice:ElementRef;
@@ -24,7 +25,7 @@ export class ProductAddComponent implements OnInit {
   productCategoriesList: ProductCategory[];
   genderList: string[];
 
-  constructor(private productService:ProductsService, private productCategoriesService: ProductCategoryService, private genderService:GenderService) { }
+  constructor(private productService:ProductsService, private productCategoriesService: ProductCategoryService, private genderService:GenderService,private router: Router) { }
 
   ngOnInit() {
     this.productCategoriesList=this.productCategoriesService.getProductCategoriesList();
@@ -32,7 +33,7 @@ export class ProductAddComponent implements OnInit {
   }
 
   saveNewProduct(){
-    const productId=this.productName.nativeElement.value;//trzeba zmienic
+    const productId=this.productService.getLastProductId()+1;
     const name=this.productName.nativeElement.value;
     const description=this.productDescription.nativeElement.value;
     const price=this.productPrice.nativeElement.value;
@@ -41,9 +42,11 @@ export class ProductAddComponent implements OnInit {
     const material=this.productMaterial.nativeElement.value;
     const weight=this.productWeight.nativeElement.value;
     const gender=this.productGender.nativeElement.value;
-    const image=this.productImage.nativeElement.value;
+    // const image=this.productImage.nativeElement.value;
+    const image='assets/images/allProducts1.jpg';
     const newProduct=new Product(productId,name,description,price,category,color,material,weight,gender,image);
     this.productService.addProdcut(newProduct);
-
+    const productCategoryId=this.productCategoriesService.getProductCategoryByName(category).productCategoryId;
+    this.router.navigate(['/productCategory/'+productCategoryId]);
   }
 }

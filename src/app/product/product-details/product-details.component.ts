@@ -13,7 +13,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class ProductDetailsComponent implements OnInit {
 
   productCategory:ProductCategory;
- product: Product;
+  product: Product;
 
   constructor(private productCategoryService: ProductCategoryService,private productService: ProductsService,private route: ActivatedRoute,private router: Router) {
 
@@ -33,5 +33,7 @@ export class ProductDetailsComponent implements OnInit {
         }
       );
   }
-
+  redirectToEditProduct(){
+    this.router.navigate(['/editProduct/'+this.product.productId]);
+  }
 }

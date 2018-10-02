@@ -6,6 +6,8 @@ import { ProductCategoriesListComponent } from './product/product-categories-lis
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductItemComponent } from './product/product-list/product-item/product-item.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { ProductAddComponent } from './product/product-add/product-add.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
 
 const appRoutes: Routes=[
   {path: '', component: ProductCategoriesListComponent},
@@ -15,6 +17,8 @@ const appRoutes: Routes=[
       {path: 'product/:productId', component: ProductDetailsComponent }
      ]
   },
+  {path: 'newProduct', component: ProductAddComponent},
+  {path: 'editProduct/:productId', component: ProductEditComponent}
   // {path: 'productCategoriesList', component: ProductCategoriesListComponent},
   // {path: 'productList', component: ProductListComponent},
   // {path: 'productCategories', component: ProductComponent}

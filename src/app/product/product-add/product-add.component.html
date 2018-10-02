@@ -1,7 +1,12 @@
 <h2>Add new product</h2>
 <br />
 <form class="form-horizontal">
-
+  <div class="form-group"[hidden]="true">
+    <label class="col-sm-2 control-label" >Id:</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" #productId/>
+    </div>
+  </div>
   <div class="form-group">
     <label class="col-sm-2 control-label" >Name:</label>
     <div class="col-sm-5">
@@ -54,12 +59,18 @@
       </select>
     </div>
   </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label" >Image:</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" #productImage/>
-    </div>
-  </div>
+  <!--<div class="form-group">-->
+    <!--<label class="col-sm-2 control-label" >Image:</label>-->
+    <!--<div class="col-sm-5">-->
+      <!--<input type="text" class="form-control" #productImage/>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label class="col-sm-2 control-label" >Image2:</label>-->
+    <!--<div class="col-sm-5">-->
+      <!--<input type="file" name="file-input" multiple #productImage2 />-->
+    <!--</div>-->
+  <!--</div>-->
 
   <div class="form-group">
     <label class="col-sm-2 control-label" ></label>

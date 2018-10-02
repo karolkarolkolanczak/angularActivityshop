@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
   productCategoryId: number;
   productCategoriesList: ProductCategory[];
 
-  constructor(private productCategoryService: ProductCategoryService, private productService: ProductsService, private route: ActivatedRoute) {
+  constructor(private productCategoryService: ProductCategoryService, private productService: ProductsService, private route: ActivatedRoute,private router: Router) {
   }
 
   ngOnInit() {
@@ -51,6 +51,9 @@ export class ProductComponent implements OnInit {
         }
       );
   }
-
+  redirectToAddProduct(){
+    // this.router.navigateByUrl('/user');
+    this.router.navigate(['/newProduct']);
+  }
 
 }

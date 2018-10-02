@@ -1,3 +1,83 @@
-<p>
-  product-edit works!
-</p>
+<h2>Edit product</h2>
+<br />
+<form class="form-horizontal">
+  <div class="form-group"[hidden]="true">
+    <label class="col-sm-2 control-label" >Id:</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" #productId/>
+    </div>
+  </div>
+  <div class="form-group" >
+    <label class="col-sm-2 control-label" >Name:</label>
+    <div class="col-sm-5">
+      <input class="form-control" [(ngModel)]="product.name" name="productName"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" >Description:</label>
+    <div class="col-sm-5">
+      <input class="form-control" [(ngModel)]="product.description" name="productDescription"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" >Price:</label>
+    <div class="col-sm-5">
+      <input class="form-control" [(ngModel)]="product.price" name="productPrice"/>
+    </div>
+  </div>
+  <div class="form-group" [hidden]="true">
+    <label class="col-sm-2 control-label" >Category</label>
+    <div class="col-sm-5" >
+      <select class="form-control" #productCategory >
+        <option *ngFor="let value of productCategoriesList" [ngValue]="value" >{{value.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" >Color:</label>
+    <div class="col-sm-5">
+      <input class="form-control" [(ngModel)]="product.color" name="productColor"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" >Material:</label>
+    <div class="col-sm-5">
+      <input class="form-control" [(ngModel)]="product.material" name="productMaterial"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" >Weight:</label>
+    <div class="col-sm-5">
+      <input class="form-control" [(ngModel)]="product.weight" name="productWeight"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" >Gender:</label>
+    <div class="col-sm-5">
+      <select class="form-control" #productGender >
+        <option *ngFor="let value of genderList" [ngValue]="value" >{{value}}</option>
+      </select>
+    </div>
+  </div>
+  <!--<div class="form-group">-->
+  <!--<label class="col-sm-2 control-label" >Image:</label>-->
+  <!--<div class="col-sm-5">-->
+  <!--<input type="text" class="form-control" #productImage/>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+  <!--<label class="col-sm-2 control-label" >Image2:</label>-->
+  <!--<div class="col-sm-5">-->
+  <!--<input type="file" name="file-input" multiple #productImage2 />-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label" ></label>
+    <div class="col-sm-1 control-label" style="margin-bottom: 100px">
+      <button type="button" class="btn btn-primary" (click)="saveEditedProduct()">Submit</button>
+    </div>
+  </div>
+
+</form>
+

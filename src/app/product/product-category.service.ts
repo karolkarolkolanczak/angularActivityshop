@@ -36,5 +36,13 @@ export class ProductCategoryService {
     console.log("FROM CATEGORY SERVICE: "+productCategory.productCategoryId+" "+productCategory.name);
     return productCategory;
   }
-
+  getProductCategoryByName(categoryName: string){
+    const productCategory: ProductCategory = this.productCategoriesList.find(
+      (s) => {
+        return s.name === categoryName;
+      }
+    );
+    console.log("FROM CATEGORY SERVICE: "+productCategory.productCategoryId+" "+productCategory.name);
+    return productCategory;
+  }
 }
