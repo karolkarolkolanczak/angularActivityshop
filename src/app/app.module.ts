@@ -19,6 +19,7 @@ import { ProductCategoryService } from './product/product-category.service';
 import { GenderService } from './product/gender.service';
 import { ProductCategoriesTabItemComponent } from './product/product-categories-list/product-categories-tab-item/product-categories-tab-item.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ModalModule.forRoot()
   ],
   providers: [ProductsService, ProductCategoryService,GenderService],
   bootstrap: [AppComponent]

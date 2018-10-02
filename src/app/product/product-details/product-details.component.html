@@ -38,7 +38,15 @@
           <button type="button" class="btn btn-primary" (click)="redirectToEditProduct()">Edit Product</button>
         </div>
         <div class="row col-sm-4 control-label">
-          <button type="button" class="btn btn-danger" (click)="redirectToDeleteProduct()">Delete Product</button>
+          <button type="button" class="btn btn-danger" (click)="openModal(template)">Delete Product</button>
+          <br><br>
+          <ng-template #template>
+            <div class="modal-body text-center">
+              <p>Do you want to confirm?</p>
+              <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+              <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+            </div>
+          </ng-template>
         </div>
       </div>
     </form>
@@ -56,3 +64,7 @@
     </tr>
   </table>
 </div>
+
+
+
+
