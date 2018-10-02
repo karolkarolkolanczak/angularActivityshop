@@ -36,4 +36,9 @@ export class ProductDetailsComponent implements OnInit {
   redirectToEditProduct(){
     this.router.navigate(['/editProduct/'+this.product.productId]);
   }
+  redirectToDeleteProduct(){
+    const productCategoryId=this.productCategoryService.getProductCategoryByName(this.product.category).productCategoryId;
+    this.productService.deleteProductById(this.product);
+    this.router.navigate(['/productCategory/'+productCategoryId]);
+  }
 }

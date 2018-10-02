@@ -108,7 +108,11 @@ export class ProductsService {
   updateProductById(newProduct: Product){
     let oldProduct=this.productList.findIndex(x => x.productId==newProduct.productId);
     this.productList[oldProduct] = newProduct;
-    console.log("ddddddddddddddddddddddddddddd");
+  }
+
+  deleteProductById(product: Product){
+    let productToDelete=this.productList.findIndex(x => x.productId==product.productId);
+    this.productList.splice(productToDelete,1);
   }
 
 }

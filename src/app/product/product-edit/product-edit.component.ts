@@ -27,10 +27,10 @@ export class ProductEditComponent implements OnInit {
   product: Product;
 
 
-  constructor(private productService:ProductsService, private productCategoriesService: ProductCategoryService,private route: ActivatedRoute, private genderService:GenderService,private router: Router) { }
+  constructor(private productService:ProductsService, private productCategoryService: ProductCategoryService,private route: ActivatedRoute, private genderService:GenderService,private router: Router) { }
 
   ngOnInit() {
-    this.productCategoriesList=this.productCategoriesService.getProductCategoriesList();
+    this.productCategoriesList=this.productCategoryService.getProductCategoriesList();
     this.genderList=this.genderService.getGenderList();
 
       this.route.params
@@ -47,11 +47,9 @@ export class ProductEditComponent implements OnInit {
   }
 
   saveEditedProduct(){
-
-    console.log("---------------------------"+this.product.productId+" "+this.product.name);
     this.productService.updateProductById(this.product);
     // '/productCategory',productCategory.productCategoryId,'product',product.productId]
-    const productCategoryId=this.productCategoriesService.getProductCategoryByName(this.product.category)
+    const productCategoryId=this.productCategoryService.getProductCategoryByName(this.product.category).productCategoryId;
     this.router.navigate(['/productCategory/'+productCategoryId+'/product/'+this.product.productId]);
   }
 }
